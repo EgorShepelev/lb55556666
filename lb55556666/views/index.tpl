@@ -2,6 +2,7 @@
 
 <div class="jumbotron">
     <img src="static\images\logo_nav.png">
+    <p></p>
     <p class="lead">Bottle is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
     <p><a href="http://bottlepy.org/docs/dev/index.html" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
 </div>
@@ -25,5 +26,11 @@
         <h2>Microsoft Azure</h2>
         <p>You can easily publish to Microsoft Azure using Visual Studio. Find out how you can host your application using a free trial today.</p>
         <p><a class="btn btn-default" href="http://azure.microsoft.com">Learn more &raquo;</a></p>
-    </div>
+    </div> 
 </div>
+<h3> Ask a Question </h3>
+<form action="/home" method="post">
+        <p><textarea rows="2" cols="50" name="QUEST" placeholder="Your question"></textarea></p> 
+        <p><input type="text" size="50" name="ADRESS" placeholder="Your email"></p>
+        <p><input type="submit" class="btn btn-default" value="Send"></p>
+</form>
