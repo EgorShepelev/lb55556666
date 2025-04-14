@@ -3,7 +3,7 @@ import re
 from datetime import datetime
 import pdb  # Импортируем pdb для отладочной печати
 
-# Глобальный словарь для хранения данных (email -> question)
+# Глобальный словарь для хранения данных (email -> [USERNAME, QUESTION])
 user_data = {}
 
 @post('/home', method='post')
@@ -34,8 +34,8 @@ def my_form():
     if len(question) > 1000:
         return "Error: The question is too long! Maximum 1000 characters allowed."
 
-    # Добавляем данные в словарь
-    user_data[mail] = question
+    # Добавляем данные в словарь (email -> [USERNAME, QUESTION])
+    user_data[mail] = [username, question]
 
     # Отладочная печать с использованием pdb
     pdb.set_trace()  # Останавливаем выполнение программы для просмотра словаря
