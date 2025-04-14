@@ -32,8 +32,7 @@
             <input type="text" size="50" name="USERNAME" placeholder="Your name">
         </p>
         <p>
-            <textarea rows="2" cols="50" name="QUEST" placeholder="Your question"></textarea>
-        </p>
+            <textarea rows="4" cols="50" name="QUEST" placeholder="Your question" maxlength="1000" style="resize: none; overflow-y: auto;" required></textarea>        </p>
         <p>
             <input type="text" size="50" name="ADRESS" placeholder="Your email">
         </p>
