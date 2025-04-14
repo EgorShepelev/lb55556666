@@ -1,4 +1,4 @@
-from bottle import post, request, template
+from bottle import post, request
 import re
 from datetime import datetime
 
@@ -12,10 +12,16 @@ def my_form():
     if not mail or not username:
         return "Error: All fields must be filled!"
 
-    # Проверка формата электронной почты с помощью регулярного выражения
-    email_pattern = r"^[-\w\.]+@([-\w]+\.)+[-\w]{2,4}$"
+    # Упрощённый паттерн для проверки формата электронной почты
+    email_pattern = r"^(?=.{1,64}@)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+
+    # Проверка формата электронной почты
     if not re.match(email_pattern, mail):
         return "Error: Invalid email format!"
+
+    # Проверка общей длины адреса
+    if len(mail) > 254:
+        return "Error: Email address is too long!"
 
     # Получение текущей даты в формате YYYY-MM-DD
     current_date = datetime.now().strftime('%Y-%m-%d')
